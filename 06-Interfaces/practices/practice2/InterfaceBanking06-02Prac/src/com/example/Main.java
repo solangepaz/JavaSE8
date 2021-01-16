@@ -3,19 +3,17 @@ package com.example;
 public class Main {
 
     public static void main(String[] args) {
-        Bank bank = new Bank();
+        BankOperations bank = new Bank();
         initializeCustomers(bank);
 
         // run the customer report
-        CustomerReport report = new CustomerReport();
-        report.setBank(bank);
-        report.generateReport();
+        bank.generateReport();
     }
 
-    private static void initializeCustomers(Bank bank) {
+    private static void initializeCustomers(BankOperations bank) {
         Customer customer;
-// Create several customers and their accounts
-        bank.addCustomer("Will", "Smith",Branch.LA);
+        // Create several customers and their accounts
+        bank.addCustomer("Will", "Smith", Branch.LA);
         customer = bank.getCustomer(0);
         customer.addAccount(new SavingsAccount(500.00));
 
@@ -37,7 +35,7 @@ public class Main {
         customer = bank.getCustomer(4);
         customer.addAccount(new CheckingAccount(200.00));
 
-        bank.addCustomer("Maria", "Soley",Branch.Bangalore);
+        bank.addCustomer("Maria", "Soley", Branch.Bangalore);
         customer = bank.getCustomer(5);
         CheckingAccount chkAcct = new CheckingAccount(100.00);
 

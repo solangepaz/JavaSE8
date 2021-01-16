@@ -8,21 +8,21 @@ public abstract class Account {
         this.balance = balance;
     }
     
-    public double getBalance() {
+   /* public double getBalance() {
         return balance;
     }
     
     public void deposit(double amount) {
         balance += amount;
     }
-    
+    */
     @Override
     public String toString() {
-        return getDescription() + ": current balance is " + balance;
+        return "Current balance is " + balance;
     }
     
-    public abstract boolean withdraw(double amount);
+    //public abstract boolean withdraw(double amount);
     
-    public abstract String getDescription();
+    //public abstract String getDescription();
     
 }

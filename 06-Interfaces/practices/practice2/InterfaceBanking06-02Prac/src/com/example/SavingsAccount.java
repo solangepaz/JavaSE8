@@ -1,18 +1,11 @@
-
-
 package com.example;
 
-
-public class SavingsAccount extends Account{
+public class SavingsAccount extends Account implements AccountOperations{
      Double rateofinterest=0.06;
 
     public SavingsAccount(double balance) {
         super(balance);
     }
-
-    
-    
- 
     
 
     @Override
@@ -36,6 +29,16 @@ public class SavingsAccount extends Account{
     @Override
     public String getDescription() {
         return "Savings Account";
+    }
+
+    @Override
+    public double getBalance(){
+        return balance;
+    }
+
+    @Override
+    public String toString() {
+        return this.getDescription() +" balance is " + balance;
     }
     
 }
