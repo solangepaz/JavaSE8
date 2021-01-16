@@ -18,6 +18,10 @@ public class RoboMailTest01 {
     System.out.println("\n=== Male Eng Under 65");
     
     // Mail mail, Eng employees < 65
-
+    pl.stream()
+      .filter(p->p.getGender()==Gender.MALE)
+      .filter(p->p.getDept()=="Eng")
+      .filter(p->p.getAge()<65)
+      .forEach(p->robo.roboMail(p));
   }
 }
