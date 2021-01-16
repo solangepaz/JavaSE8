@@ -6,8 +6,18 @@ import com.example.domain.Director;
 import com.example.domain.Employee;
 import com.example.domain.Engineer;
 import com.example.domain.Manager;
+import com.example.domain.EmployeeStockPlan;
 
 public class EmployeeTest {
+
+    public static void printEmployee(Employee emp) {
+        System.out.println(emp);
+    }
+    
+    public static void printEmployee(Employee emp, EmployeeStockPlan esp) { 
+        printEmployee(emp);
+        System.out.println("Stock options: " + esp.grantStock(emp)); 
+    }
 
     public static void main(String[] args) {
 
@@ -20,7 +30,7 @@ public class EmployeeTest {
 
         Director dir = new Director(12, "Susan Wheeler", "099-45-2340", 120_567.36, "Global Marketing", 1_000_000.00);
 
-        eng.printEmployee();
+       /* eng.printEmployee();
 
         adm.printEmployee();
         mgr.printEmployee();
@@ -29,7 +39,18 @@ public class EmployeeTest {
         System.out.println("\nTesting raiseSalary and setName on Manager:");
         mgr.setName("Barbara Johnson-Smythe");
         mgr.raiseSalary(10_000.00);
-        mgr.printEmployee();
+        mgr.printEmployee();*/
+
+        EmployeeStockPlan empStock = new EmployeeStockPlan();
+        printEmployee(eng, empStock);
+
+        printEmployee(adm, empStock);
+        printEmployee(mgr, empStock);
+        printEmployee(dir, empStock); 
+
+        printEmployee(mgr, empStock); 
+
+
     }
 
     
