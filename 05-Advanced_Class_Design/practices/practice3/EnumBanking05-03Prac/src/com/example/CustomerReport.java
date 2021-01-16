@@ -26,7 +26,12 @@ public class CustomerReport {
             System.out.println();
             System.out.println("Customer: "
                     + customer.getLastName() + ", "
-                    + customer.getFirstName());
+                    + customer.getFirstName() + "\n"
+                    + "Branch: "
+                    + customer.getBranch() + ", "
+                    + customer.getBranch().getServiceLevel()
+                    );
+                    
 
             // For each account for this customer...
             for (int acctIndex = 0; acctIndex< customer.getNumOfAccounts(); acctIndex++) {
