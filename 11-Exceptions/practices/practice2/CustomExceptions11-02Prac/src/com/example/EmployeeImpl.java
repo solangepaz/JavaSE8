@@ -12,17 +12,40 @@ public class EmployeeImpl {
     EmployeeImpl() {
     }
 
-    public void add(Employee emp) {
+    public void add(Employee emp) throws InvalidOperationException {
+        if (employeeArray[emp.getId()] != null) {
+            throw new InvalidOperationException("Error adding employee, employee id already exists " + emp.getId());
+        }
+
+        try {
+            employeeArray[emp.getId()] = emp;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new InvalidOperationException("Error adding employee, id must be less than " + employeeArray.length);
+        }
 
     }
 
-    public void delete(int id) {
+    public void delete(int id) throws InvalidOperationException {
+        if (employeeArray[id] == null) {
+            throw new InvalidOperationException("Error deleting employee, " + id + " does not exist in array.");
+        }
+
+        try {
+            employeeArray[id] = null;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new InvalidOperationException(
+                    "Error deleting employee, id must be less than " + employeeArray.length);
+        }
 
     }
 
-    public Employee findById(int id) 
+    public Employee findById(int id) throws InvalidOperationException 
     {
-        return employeeArray[id];
+        try {
+            return employeeArray[id];
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new InvalidOperationException("Error finding employee", e);
+        }
     }
     public Employee[] getAllEmployees() {
         List<Employee> emps = new ArrayList<>();
