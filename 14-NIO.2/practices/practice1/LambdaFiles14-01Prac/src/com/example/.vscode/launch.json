@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "cwd":"${workspaceFolder}/../../.."
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "example_1225fcd0"
+        },
+        {
+            "type": "java",
+            "name": "Launch P01BufferedReader",
+            "request": "launch",
+            "mainClass": "P01BufferedReader",
+            "projectName": "example_1225fcd0"
+        },
+        {
+            "type": "java",
+            "name": "Launch P02NioRead",
+            "request": "launch",
+            "mainClass": "P02NioRead",
+            "projectName": "example_1225fcd0"
+        },
+        {
+            "type": "java",
+            "name": "Launch P03NioReadAll",
+            "request": "launch",
+            "mainClass": "P03NioReadAll",
+            "projectName": "example_1225fcd0"
+        },
+        {
+            "type": "java",
+            "name": "Launch P04NioReadAll",
+            "request": "launch",
+            "mainClass": "P04NioReadAll",
+            "projectName": "example_1225fcd0"
+        }
+    ]
+}

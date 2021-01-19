@@ -1,5 +1,3 @@
-package com.example.lambda;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -12,15 +10,14 @@ import java.util.stream.Stream;
 public class P02NioRead {
     
     public static void main(String[] args) {
-/*  Remove these comments      
-        try{ // Create Try with Resources here
+        
+        try (Stream<String> lines = Files.lines(Paths.get("hamlet.txt"))){ // Create Try with Resources here
             
             System.out.println("\n=== Entire File ===");
-            // print lines here
+            lines.forEach(line -> System.out.println(line)); 
             
         }catch (IOException e){
             System.out.println("Error: " + e.getMessage());
         }
-*/
     } 
 }
