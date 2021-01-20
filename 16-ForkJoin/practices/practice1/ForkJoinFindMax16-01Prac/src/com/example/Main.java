@@ -23,9 +23,12 @@ public class Main {
 //        System.out.println("Max value found:" + max);
         
         ForkJoinPool pool = new ForkJoinPool();
-        FindMaxTask task = new FindMaxTask(data, 0, data.length-1, data.length/16);
-        Integer result = pool.invoke(task);
-        System.out.println("Max value found:" + result);
+        RandomArrayAction action = new RandomArrayAction(data, 0, data.length - 1, data.length / 16);
+
+       // FindMaxTask task = new FindMaxTask(data, 0, data.length-1, data.length/16);
+       // Integer result = pool.invoke(task);
+       pool.invoke(action);
+       //System.out.println("Max value found:" + result);
         
     }
 }
